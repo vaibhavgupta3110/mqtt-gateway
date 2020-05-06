@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon --exec ./node_modules/.bin/ts-node -- ./app/index.ts",
     "test": "jest --coverage --no-cache",
-    "dev": "WEB_API_URL=http://localhost:3000 npm start"
+    "dev": "WEB_API_URL=http://localhost:3000 npm start",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
     "axios": "^0.15.2",
     "jsonwebtoken": "^7.1.9",
     "mosca": "^2.2.0",
-    "mqtt": "^1.7.4"
+    "mqtt": "^1.7.4",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "@types/jest": "^16.0.1",
@@ -52,5 +55,6 @@
       "tsx",
       "js"
     ]
-  }
+  },
+  "snyk": true
 }
